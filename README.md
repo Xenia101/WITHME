@@ -31,16 +31,11 @@ Templates configuration
 ├─WITHME
    └─template
         info.html
-        404.html
         bookmark.html
         change.html
-        change_reverify.html
-        delete_reverify.html
-        free.html
         index.html
-        myboard.html
-        ranking.html
         signin.html
         signup.html
-        user.html
+        404.html
+        ...
 ```
