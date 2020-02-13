@@ -16,7 +16,7 @@ Design and Views References Bootstrap / See [fullpage.js](https://alvarotrigo.co
 
 ## Configuration
 
-server configuration
+Server configuration
 
 ```sh
 ├─WITHME
@@ -31,7 +31,6 @@ Templates configuration
 ├─WITHME
    └─template
         info.html
-        bookmark.html
         change.html
         index.html
         signin.html
