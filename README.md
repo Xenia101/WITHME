@@ -14,4 +14,23 @@ Developed by AKK team from February 5, 2020 to February 11, 2020.
 
 Design and Views References Bootstrap / See [fullpage.js](https://alvarotrigo.com/fullPage/ko/) for the information page.
 
-## EXAMPLE
+## Configuration
+
+Templates configuration
+
+```sh
+├─WITHME
+   └─template
+        404.html
+        bookmark.html
+        change.html
+        change_reverify.html
+        delete_reverify.html
+        free.html
+        index.html
+        myboard.html
+        ranking.html
+        signin.html
+        signup.html
+        user.html
+```
