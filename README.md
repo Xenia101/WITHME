@@ -20,7 +20,7 @@ Design and Views References Bootstrap / See [fullpage.js](https://alvarotrigo.co
 |:------:	|:------------:	|:--:	|:------:	|:-----:	|
 |    ✔   	|       ✔      	|  ✔ 	|    ✔   	|   ✔   	|
 
-※ Safari - textarea does not support \n
+※ **Safari** - textarea does not support \n
 
 ## Configuration
 
