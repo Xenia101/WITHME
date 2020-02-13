@@ -6,7 +6,7 @@
 
 ### Summary
 
-Find Anonymous Parties [WITHME](http://www.withme.xyz/info)
+<strong>Find Anonymous Parties</strong> [WITHME](http://www.withme.xyz/info)
 
 Get Anonymous Party Web applications consists of Python Flask, Mysql, Js, jQuery, Ajax with (html, css) and more..
 
