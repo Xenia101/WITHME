@@ -39,7 +39,6 @@ Templates configuration
 ├─WITHME
    └─template
         info.html
-        change.html
         index.html
         signin.html
         signup.html
