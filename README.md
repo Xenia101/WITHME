@@ -46,10 +46,9 @@ Templates configuration
         ...
 ```
 
-## Information
-
+## [Information Page](http://www.withme.xyz/info)
 
 <p align="center">
-  <img style="width:200px" src="https://github.com/Xenia101/WITHME/blob/master/img/info1.PNG?raw=true">
-  <img style="width:200px" src="https://github.com/Xenia101/WITHME/blob/master/img/info2.PNG?raw=true">
+  <img style="width:100px;" src="https://github.com/Xenia101/WITHME/blob/master/img/info1.PNG?raw=true">
+  <img style="width:100px;" src="https://github.com/Xenia101/WITHME/blob/master/img/info2.PNG?raw=true">
 </p>
