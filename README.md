@@ -49,7 +49,7 @@ Templates configuration
 ## Information Page [[withme.xyz](http://www.withme.xyz/info)]
 
 <p align="center">
-  <img style="width:300px" src="https://github.com/Xenia101/WITHME/blob/master/img/gifimg.?raw=true">
+  <img style="width:300px" src="https://github.com/Xenia101/WITHME/blob/master/img/gifimg.gif?raw=true">
 </p>
 
 <p align="center">
