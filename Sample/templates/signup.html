@@ -1,0 +1,179 @@
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158084303-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-158084303-1');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="generator" content="Jekyll v3.8.6">
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="./static/img/favicon.ico">
+    <title>WITHME | 회원가입</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+    <style>
+      html,body {
+        height: 100%;
+      }
+
+      body {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center;
+        padding-bottom: 40px;
+        background-color: #f5f5f5;
+      }
+
+      .form-signin {
+        width: 100%;
+        max-width: 330px;
+        padding: 15px;
+        margin: auto;
+      }
+      .form-signin .form-control {
+        position: relative;
+        box-sizing: border-box;
+        height: auto;
+        padding: 10px;
+        font-size: 16px;
+      }
+      .form-signin .form-control:focus {
+        z-index: 2;
+      }
+      .form-signin input[type="text"] {
+        margin-bottom: -1px;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+      .form-signin input[type="password"] {
+        margin-bottom: 10px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+      }
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      .btn {
+        border-color: #15B7B9;
+        color:#15B7B9;
+      }
+      .btn:hover{
+        color:white;
+        background-color: #15B7B9;
+        border-color: #15B7B9;
+      }
+      .btn:active{
+        background-color: #15B7B9!important;
+        border-color: #15B7B9!important;
+      }
+      .signup_text{
+        margin-top: 10px;
+      }
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      .form-control:focus{
+                border-color:#15B7B9;
+                box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 8px rgba(21,183,185,0.6);
+            }
+    </style>
+
+    </head>
+    <body class="text-center">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              <div class="animated fadeInDown fixed-top alert alert-warning alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <strong>이런!</strong> {{ message }}
+              </div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+        <form class="form-signin" action="{{ url_for('signup') }}" method="POST">
+            <img class="mb-4" src="../static/img/logo.png" alt="" width="250" height="auto">
+
+            <div class="form-group">
+              <input type="text" class="form-control" name="userID" placeholder="아이디" required="" autofocus="" minlength="6" maxlength="20">
+            </div>
+            <div class="form-group">
+              <input id="pwd1" type="password" class="form-control" name="userPWD" placeholder="패스워드" required="" minlength="6" maxlength="20">
+            </div>
+            <div class="form-group">
+              <input id="pwd2" type="password" class="form-control" name="userRePWD" placeholder="패스워드 재확인" required="" minlength="6" maxlength="20">
+            </div>
+            <div class="alert alert-success animated fadeIn" id="alert-success">비밀번호가 일치합니다.</div> 
+            <div class="alert alert-danger animated fadeIn" id="alert-danger">비밀번호가 일치하지 않습니다.</div>
+
+            <div class="form-group">
+              <input type="email" class="form-control" name="email" placeholder="Email" required="">
+            </div>
+
+            <div class="form-group">
+              <input class="form-control" type="date" value="1996-01-01" id="example-date-input" name="birth">
+            </div>
+
+            <div class="form-group">
+              <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="sextomRadioInline1" class="custom-control-input" name="sex" value="1" checked>
+                <label class="custom-control-label" for="sextomRadioInline1">남자</label>
+              </div>
+              <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="sexRadioInline2" class="custom-control-input" name="sex" value="2">
+                <label class="custom-control-label" for="sexRadioInline2">여자</label>
+              </div>
+            </div>
+
+            <button class="btn btn-lg btn-outline-primary btn-block" type="submit" id="submit">회원가입</button>
+
+            <p class="mt-5 mb-3 text-muted">© 2020. WITHME</br>Developed by Team. AKK</p>
+        </form>
+
+        <!-- Optional JavaScript -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script type="text/javascript">
+          $(function(){
+            $("#alert-success").hide();
+            $("#alert-danger").hide();
+            $("input").keyup(function(){
+              var pwd1=$("#pwd1").val(); 
+              var pwd2=$("#pwd2").val();
+              if(pwd1 != "" || pwd2 != ""){
+                if(pwd1 == pwd2){
+                  $("#alert-success").show();
+                  $("#alert-danger").hide();
+                  $("#submit").removeAttr("disabled");
+                }else{
+                  $("#alert-success").hide();
+                  $("#alert-danger").show();
+                  $("#submit").attr("disabled", "disabled");
+                }
+              }
+            });
+          });
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    </body>
+</html>

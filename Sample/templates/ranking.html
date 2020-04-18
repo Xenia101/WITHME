@@ -1,0 +1,648 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script data-ad-client="ca-pub-5253000845981768" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-158084303-1');
+    </script>
+    
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- feathericons -->
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="./static/img/favicon.ico">
+    <!-- animation -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <!-- owlCarousel2 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+    <!-- jQuery -->
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+    <title>WITHME</title>
+
+    <style>
+        html, body{
+            background-color: #f5f5f5;
+        }
+        .upText {
+            border-color: #15B7B9;
+            background-color: #15B7B9;
+            color:white;
+        }
+        .upText:hover{
+            color:white;
+            background-color: #15B7B9;
+            border-color: #15B7B9;
+        }
+        .upText:active{
+            background-color: #15B7B9!important;
+            border-color: #15B7B9!important;
+        }
+        .ptr--ptr{
+            box-shadow: none!important;
+        }
+        .row {
+            display: table;
+            height:20%;
+            width: 100%;
+            margin: 0;
+        }
+        .no-padding {
+            padding: 0 !important;
+        }
+        .owl-dot{
+            display: none;
+        }
+        .item{
+            margin-top:2.5px;
+            margin-bottom:2.5px;
+        }
+        footer {
+            position: fixed;
+            height: 100px;
+            bottom: 0;
+            width: 100%;
+        }
+        .fa-heart-o {
+            color: red;
+            cursor: pointer;
+        }
+        .fa-heart {
+            color: red;
+            cursor: pointer;
+        }
+        input[type="text"] {
+            font-family: monospace;
+            font-size: 20px;
+            color: peru;
+        }
+        ::-webkit-input-placeholder {
+            color: peachpuff;
+            font-size: 12px;
+        }
+        ::-moz-placeholder {
+            color: peachpuff;
+            font-size: 12px;
+        }
+        :-ms-input-placeholder {
+            color: peachpuff;
+            font-size: 12px;
+        }
+        ::placeholder {
+            color: peachpuff;
+            font-size: 12px;
+        }
+        .form-control:focus {
+	        border-color : #15B7B9;
+            box-shadow : inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(21, 183, 185, 0.6);
+        }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-light bg-light" style="background-color: #15B7B9!important; margin-bottom: 1px;">
+        <a class="navbar-brand" style="color:white;">WITHME</a>
+        <a class="form-inline" href="{{ url_for('home') }}" style="color:white; cursor:pointer;"><i class="mr-sm-2" data-feather="arrow-left"></i></a>
+    </nav>
+    
+    <div class="collapse animated fadeIn text-center" id="collapsemenu" >
+        <a class="mr-2" href="{{ url_for('myboard') }}" style="color:#15B7B9;cursor:pointer;"><i data-feather="check-square"></i></a>
+        <a class="mr-2" href="{{ url_for('bookmark') }}" style="color:#15B7B9;cursor:pointer;"><i data-feather="bookmark"></i></a>
+        <a class="mr-2" href="{{ url_for('ranking') }}" style="color:#15B7B9;cursor:pointer;"><i data-feather="award"></i></a>
+        <a class="mr-2" href="{{ url_for('user') }}" style="color:#15B7B9;cursor:pointer;"><i data-feather="user"></i></a> 
+        
+        <a style="padding: 0; margin:0;" class="inline mr-2" class="btn" data-container="body" data-toggle="popover">
+            <i style="color:#15B7B9;" data-feather="info"></i>
+        </a>
+        <script>
+            $(document).ready( function () {
+              $( '[data-toggle="popover"]' ).popover({
+                html: true,
+                placement : 'bottom',
+                trigger: 'hover',
+                content: function(){
+                    return "<img src='../static/img/btn_info.PNG' />"
+                }
+              })
+            });
+
+            function select() {
+                var i = Math.floor(Math.random() * 5) + 1;
+                if (i == 1) {
+                    return 'primary'
+                }
+                else if (i == 2) {
+                    return 'success'
+                }
+                else if (i == 3) {
+                    return 'danger'
+                }
+                else if (i == 4) {
+                    return 'warning'
+                }
+                else if (i == 5) {
+                    return 'info'
+                }
+            }
+        </script>
+    </div>
+
+    <div class="text-center mb-2">
+        <img src="./static/img/crown.png" class="crown rounded mx-auto d-block" style="height: 8em; padding: 0;" alt="">
+        <strong>이번주 하트가 많은 글입니다!</strong>
+    </div>
+        <!-- Board LIST -->
+        <div class="refresh-pos animated fadeIn" id='pulldown'>
+            {% for i in range(board|length) %}
+            {% set count = namespace(value=0) %}
+            {% set count2 = namespace(value=0) %}
+            <div class="owl-carousel">
+                <div class="card item ml-1 mr-1">
+                    <div class="card-header md-5">
+                        {% if board[i].active == 1 %}
+                        <strong class="card-header2">{{ board[i].title }}</strong>
+                        {% elif board[i].active == 3 %}
+                        <strong class="card-header2">{{ board[i].content}}</strong>
+                        {% endif %}
+                        <p class="card-text float-right">
+                            <small class="text-muted">
+                            {% if date[0][i*2] == 0 %}
+                                {% if date[0][i*2+1] < 3600 %}
+                                    Last updated {{(date[0][i*2+1]/60)|int}}mins ago
+                                {% elif date[0][i*2+1] >= 3600 %}
+                                    Last updated {{(date[0][i*2+1]/3600)|int}}hours ago
+                                {% endif %}
+                            {% elif date[0][i*2] >=1 %}
+                                Last updated {{date[0][i*2]}}days ago
+                            {% endif %}
+                            {% if board[i].writer == username %}
+                               <span><i style="color:red; font-size: large;" class="board_delete{{board[i].inx}} fa fa-trash" aria-hidden="true"></i></span>
+                            {% endif %}
+                            </small>
+                        </p>
+                    </div>
+                    <script>
+                        $('.board_delete{{ board[i].inx }}').click( function() {
+                            $.ajax({
+                                type : 'POST',
+                                url : '/board_delete',
+                                data : {
+                                    'index_board': "{{ board[i].inx }}"
+                                },
+                                dataType : 'JSON',
+                            }).done(function(data){
+                                if(data['state'] == 'done'){
+                                    location.reload();
+                                }
+                            });
+                        });
+                    </script>
+                    <div class="card-body">
+                        {% if board[i].active == 1 or board[i].active == 2 %}
+                        <p class="card-text card-text2">{{ board[i].content }}</p>
+                        {% endif %}
+                        {% if board[i].active == 3 %}
+                        <p class="vote_category1-{{ board[i].inx }} card-text font-weight-bold">
+                            {{ board[i].vote_category1 }}
+                          </p>
+                          <div class="text-center">
+                            <strong>VS</strong>
+                          </div>
+                        <p class="vote_category2-{{ board[i].inx }} card-text font-weight-bold">
+                            {{ board[i].vote_category2 }}
+                          </p>
+                          <hr>
+                          <div class="text-center mb-2">
+                            <strong>결과</strong>
+                          </div>
+                          <div class="progress">
+                          <div class="good1-{{ board[i].inx }} progress-bar" role="progressbar" aria-valuemin="0" style="width:50%" aria-valuemax="100">{{ vote[0][i] }}표</div>
+                          <div class="good2-{{ board[i].inx }} progress-bar" role="progressbar" aria-valuemin="0" style="width:50%" aria-valuemax="100">{{ vote[1][i] }}표</div>
+                          </div>
+                          <div class="card-footer bg-transparent">
+                            <div class="text-center">
+                                {% if vote_show[0][i] == 0 and vote_show[1][i] == 0 %}
+                                <button type="button" class="vote_entry1-{{ board[i].inx }} btn btn-sm">닥전</button>
+                                <button type="button" class="vote_entry2-{{ board[i].inx }} btn btn-sm">닥후</button>
+                                <button type="button" class="cancel_vote_entry-{{ board[i].inx }} btn btn-secondary btn-sm" style="display:none;">취소</button>
+                                {% else %}
+                                <button type="button" class="vote_entry1-{{ board[i].inx }} btn btn-sm" style="display:none;">닥전</button>
+                                <button type="button" class="vote_entry2-{{ board[i].inx }} btn btn-sm" style="display:none;">닥후</button>
+                                <button type="button" class="cancel_vote_entry-{{ board[i].inx }} btn btn-secondary btn-sm">취소</button>
+                                {% endif %}
+                            </div>
+                          </div>
+                        {% endif %}
+                        {% if board[i].active == 1 %}
+                        <div class="align-items-center float-left">
+                            <small class="text-muted">{{ (board[i].start_time|string)[:-3] }}</small>
+                            <small class="text-muted">~</small>
+                            <small class="text-muted">{{ (board[i].end_time|string)[:-3] }}</small>
+                        </div>
+                        {% endif %}
+                        <div class="float-right">
+                            <i style="color:#15B7B9" class="fa fa-comments-o float-right;" aria-hidden="true">
+                                <span style="font-size: 15px;">
+                                {% for k in range(comment|length) %}
+                                    {% if board[i].inx == comment[k].inx %}
+                                        {% set count2.value = count2.value + 1 %}
+                                    {% endif %}
+                                {% endfor %}
+                                {{count2.value}}
+                                </span>
+                            </i>
+                            {% if board[i].active == 2 or board[i].active == 3 %}
+                                {% if liked == () %}
+                            <span class="enheart-{{ board[i].inx }}"><i class="animated rubberBand fa fa-heart-o" aria-hidden="true" ></i></span>
+                            <span style="display: none;" class="deheart-{{ board[i].inx }}"><i class="animated rubberBand fa fa-heart" aria-hidden="true" ></i></span>
+                                {% else %}
+                                    {% for j in liked %}
+                                        {% if board[i].inx == j.inx %}
+                                <span class="deheart-{{ board[i].inx }}"><i class="animated rubberBand fa fa-heart" aria-hidden="true" ></i></span>
+                                <span style="display: none;" class="enheart-{{ board[i].inx }}"><i class="animated rubberBand fa fa-heart-o" aria-hidden="true" ></i></span>
+                                        {% else %}
+                                            {% set count.value = count.value + 1 %}
+                                        {% endif %}
+                                        {% if count.value == liked|length %}
+                                <span class="enheart-{{ board[i].inx }}"><i class="animated rubberBand fa fa-heart-o" aria-hidden="true" ></i></span>
+                                <span style="display: none;" class="deheart-{{ board[i].inx }}"><i class="animated rubberBand fa fa-heart" aria-hidden="true" ></i></span>
+                                        {% endif %}
+                                    {% endfor %}
+                                {% endif %}
+                            <span class="text-danger good-{{board[i].inx}}">{{ board[i].good }}</span>
+                            {% endif %}
+                        </div>
+                        <script>
+                            $(".good1-{{ board[i].inx }}").ready(function(){
+                                var a = $(".good1-{{ board[i].inx }}").text();
+                                var b = $(".good2-{{ board[i].inx }}").text();
+                                a = a.replace('표', '') * 1;
+                                b = b.replace('표', '') * 1;
+                                if(a != 0 || b!= 0) {
+                                    $('.good1-{{ board[i].inx }}').css('width', Math.round(a / (a + b) * 100) + '%');
+                                }
+                            });
+                            $(".good2-{{ board[i].inx }}").ready(function(){
+                                var a = $(".good1-{{ board[i].inx }}").text();
+                                var b = $(".good2-{{ board[i].inx }}").text();
+                                a = a.replace('표', '') * 1;
+                                b = b.replace('표', '') * 1;
+                                if(a != 0 || b!= 0) {
+                                    $('.good2-{{ board[i].inx }}').css('width', Math.round(b / (a + b) * 100) + '%');
+                                }
+                            });
+                            $(".enheart-{{ board[i].inx }}").click(function(){
+                                $.ajax({
+                                    type : 'POST',
+                                    url : '/free_liked',
+                                    data : {
+                                        'heart_index': "{{ board[i].inx }}"
+                                    },
+                                    dataType : 'JSON',
+                                }).done(function(data){
+                                    if(data['state'] == 'done'){
+                                        $('.enheart-{{ board[i].inx }}').css('display', 'none');
+                                        $('.deheart-{{ board[i].inx }}').css('display', 'inline');
+                                        $('.good-{{ board[i].inx }}').text(data['good']);
+                                    }
+                                });
+                            });
+                            $(".deheart-{{ board[i].inx }}").click(function(){
+                                $.ajax({
+                                    type : 'POST',
+                                    url : '/free_disliked',
+                                    data : {
+                                        'heart_index': "{{ board[i].inx }}"
+                                    },
+                                    dataType : 'JSON',
+                                }).done(function(data){
+                                    if(data['state'] == 'done'){
+                                        $('.deheart-{{ board[i].inx }}').css('display', 'none');
+                                        $('.enheart-{{ board[i].inx }}').css('display', 'inline');
+                                        $('.good-{{ board[i].inx }}').text(data['good']);
+                                    }
+                                });
+                            });
+                        $(".vote_entry1-{{ board[i].inx }}").click(function(){
+                            $.ajax({
+                                type : 'POST',
+                                url : '/vote_entry1',
+                                data : {
+                                    'before': "{{ board[i].inx }}"
+                                },
+                                dataType : 'JSON',
+                            }).done(function(data){
+                                if(data['state'] == 'done'){
+                                    $('.vote_entry1-{{ board[i].inx }}').css('display', 'none');
+                                    $('.vote_entry2-{{ board[i].inx }}').css('display', 'none');
+                                    $('.cancel_vote_entry-{{ board[i].inx }}').css('display', 'inline');
+                                    $('.good1-{{ board[i].inx }}').css('width', Math.round(data['vote1'] / (data['vote1'] + data['vote2']) * 100) + '%');
+                                    $('.good1-{{ board[i].inx }}').text(data['vote1']+'표');
+                                    $('.good2-{{ board[i].inx }}').css('width', Math.round(data['vote2'] / (data['vote1'] + data['vote2']) * 100) + '%');
+                                    $('.good2-{{ board[i].inx }}').text(data['vote2']+'표');
+                                }
+                            });
+                        });
+                        $(".vote_entry2-{{ board[i].inx }}").click(function(){
+                            $.ajax({
+                                type : 'POST',
+                                url : '/vote_entry2',
+                                data : {
+                                    'after': "{{ board[i].inx }}"
+                                },
+                                dataType : 'JSON',
+                            }).done(function(data){
+                                if(data['state'] == 'done'){
+                                    $('.vote_entry1-{{ board[i].inx }}').css('display', 'none');
+                                    $('.vote_entry2-{{ board[i].inx }}').css('display', 'none');
+                                    $('.cancel_vote_entry-{{ board[i].inx }}').css('display', 'inline');
+                                    $('.good1-{{ board[i].inx }}').css('width', Math.round(data['vote1'] / (data['vote1'] + data['vote2']) * 100) + '%');
+                                    $('.good1-{{ board[i].inx }}').text(data['vote1']+'표');
+                                    $('.good2-{{ board[i].inx }}').css('width', Math.round(data['vote2'] / (data['vote1'] + data['vote2']) * 100) + '%');
+                                    $('.good2-{{ board[i].inx }}').text(data['vote2']+'표');
+                                }
+                            });
+                        });
+                        $(".cancel_vote_entry-{{ board[i].inx }}").click(function(){
+                            $.ajax({
+                                type : 'POST',
+                                url : '/cancel_vote_entry',
+                                data : {
+                                    'index_board': "{{ board[i].inx }}"
+                                },
+                                dataType : 'JSON',
+                            }).done(function(data){
+                                if(data['state'] == 'done'){
+                                    $('.vote_entry1-{{ board[i].inx }}').css('display', 'inline');
+                                    $('.vote_entry2-{{ board[i].inx }}').css('display', 'inline');
+                                    $('.cancel_vote_entry-{{ board[i].inx }}').css('display', 'none');
+                                    if (data['vote1'] == 0 && data['vote2'] == 0) {
+                                        $('.good1-{{ board[i].inx }}').css('width', '50%');
+                                        $('.good1-{{ board[i].inx }}').text('0표');
+                                        $('.good2-{{ board[i].inx }}').css('width', '50%');
+                                        $('.good2-{{ board[i].inx }}').text('0표');
+                                    }
+                                    else {
+                                        $('.good1-{{ board[i].inx }}').css('width', Math.round(data['vote1'] / (data['vote1'] + data['vote2']) * 100) + '%');
+                                    $('.good1-{{ board[i].inx }}').text(data['vote1']+'표');
+                                    $('.good2-{{ board[i].inx }}').css('width', Math.round(data['vote2'] / (data['vote1'] + data['vote2']) * 100) + '%');
+                                    $('.good2-{{ board[i].inx }}').text(data['vote2']+'표');
+                                    }
+                                }
+                            });
+                        });
+                    </script>
+                    </div>
+                    {% if board[i].active == 1 %}
+                    <div class="card-footer bg-transparent">
+                        <div class="text-center">
+                            {% if board[i].writer == username %}
+                                <button id="entry{{ board[i].inx }}-1" type="button" class="entry{{ board[i].inx }} btn btn-sm btn-outline-warning" disabled>참가불가<span class="badge badge-warning"><span id="badge{{ board[i].inx }}">{{ current_entry[i] }}</span>/{{ board[i].max_count }}</span></button>
+                            {% elif btn_show[i] == 1 %}
+                                <button id="cancel_entry{{ board[i].inx }}-1" type="button" class="cancel_entry{{ board[i].inx }} btn btn-sm btn-outline-danger">참가 취소</button>
+                                <button id="entry{{ board[i].inx }}-1" style="display: none;" type="button" class="entry{{ board[i].inx }} btn btn-sm btn-outline-success">참가 <span class="badge badge-success"><span id="badge{{ board[i].inx }}">{{ current_entry[i] }}</span>/{{ board[i].max_count }}</span></button>
+                            {% elif current_entry[i] == board[i].max_count %}
+                                <button id="entry{{ board[i].inx }}-1" type="button" class="entry{{ board[i].inx }} btn btn-sm btn-outline-secondary" disabled>인원초과 <span class="badge badge-secondary"><span id="badge{{ board[i].inx }}">{{ current_entry[i] }}</span>/{{ board[i].max_count }}</span></button>
+                            {% elif btn_show[i] == 0 %}
+                                <button id="entry{{ board[i].inx }}-1" type="button" class="entry{{ board[i].inx }} btn btn-sm btn-outline-success">참가 <span class="badge badge-success"><span id="badge{{ board[i].inx }}">{{ current_entry[i] }}</span>/{{ board[i].max_count }}</span></button>
+                                <button id="cancel_entry{{ board[i].inx }}-1" style="display: none;" type="button" class="cancel_entry{{ board[i].inx }} btn btn-sm btn-outline-danger">참가 취소</button>
+                            {% endif %}
+                            <script>
+                                $('.cancel_entry{{ board[i].inx }}').click( function() {
+                                    $.ajax({
+                                        type : 'POST',
+                                        url : '/cancel_entry',
+                                        data : {
+                                            'index_board': "{{ board[i].inx }}"
+                                        },
+                                        dataType : 'JSON',
+                                    }).done(function(data){
+                                        if(data['state'] == 'done'){
+                                            $('#badge{{ board[i].inx }}').text(parseInt($('#badge{{ board[i].inx }}').text())-1);
+                                            document.getElementById("cancel_entry{{ board[i].inx }}-1").style.display = "none";
+                                            document.getElementById("entry{{ board[i].inx }}-1").style.display = "inline";
+                                        }else{
+                                            console.log('');
+                                        }
+                                    })
+                                });
+                                $('.entry{{ board[i].inx }}').click( function() {
+                                    $.ajax({
+                                        type : 'POST',
+                                        url : '/entry',
+                                        data : {
+                                            'index_board': "{{ board[i].inx }}"
+                                        },
+                                        dataType : 'JSON',
+                                    }).done(function(data){
+                                        if(data['state'] == 'done'){
+                                            $('#badge{{ board[i].inx }}').text(parseInt($('#badge{{ board[i].inx }}').text())+1);
+                                            document.getElementById("cancel_entry{{ board[i].inx }}-1").style.display = "inline";
+                                            document.getElementById("entry{{ board[i].inx }}-1").style.display = "none";
+                                        }else{
+                                            console.log('');
+                                        }
+                                    })
+                                });
+                            </script>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="card item ml-1 mr-1">
+                    <div class="card-header md-5">
+                        <strong class="card-header1">
+                            {% if board[i].active == 1 %}
+                                {{ board[i].title }}
+                            {% elif board[i].active == 2 or board[i].active == 3 %}
+                                {{ board[i].content }}
+                            {% endif %}
+                        </strong>
+                    </div>
+                    <ul class="list-group list-group-flush list-group{{board[i].inx}}">
+                        {% if i < (board|length) %}
+                            {% set count3 = namespace(value = 0) %}
+                            {% set count4 = namespace(value = 0) %}
+                            {% for j in range(comment|length) %}
+                                {% if board[i].inx == comment[j].inx %}
+                                <li class="list-group-item">
+                                    {% if board[i].active == 1 %}
+                                        {% if comment[j].active == 1 %}
+                                    <span class="badge badge-light">글쓴이</span>
+                                        {% elif comment[j].active == 0 %}
+                                    <span class="badge badge-primary">참여자</span>
+                                        {% elif comment[j].active == -1 %}
+                                    <span class="badge badge-secondary">미참여자</span>
+                                        {% endif %}
+                                    {% elif board[i].active == 2 %}
+                                    <span class="badge badge-secondary">익명</span>
+                                    {% elif board[i].active == 3 %}
+                                        {% if comment[j].active == 2 %}
+                                    <span class="vote_comment1-{{ board[i].inx }} badge">닥전</span>
+                                        {% elif comment[j].active == 3 %}
+                                    <span class="vote_comment1-{{ board[i].inx }} badge">닥후</span>
+                                        {% elif comment[j].active == -1 %}
+                                    <span class="badge badge-secondary">익명</span>
+                                        {% endif %}
+                                    {% endif %}
+                                    <p>{{comment[j].comment_content}}</p>
+                                    <small class="text-muted float-right">
+                                    {% if date[1][j*2] == 0 %}
+                                        {% if date[1][j*2+1] < 3600 %}
+                                            Last updated {{(date[1][j*2+1]/60)|int}}mins ago
+                                        {% elif date[1][j*2+1] >= 3600 %}
+                                            Last updated {{(date[1][j*2+1]/3600)|int}}hours ago
+                                        {% endif %}
+                                    {% elif date[1][j*2] >=1 %}
+                                        Last updated {{date[1][j*2]}}days ago
+                                    {% endif %}
+                                    </small>
+                                {% else %}
+                                    {% set count3.value = count3.value + 1 %}
+                                {% endif %}
+                                </li>
+                                {% if count4.value == (comment|length) - count3.value %}
+                                <li class="list-group-item text-center"><small class="text-muted text-center mb-1 mt-1"><strong>아직 댓글이 없어요..</strong></small></li>
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                    </ul>
+
+                    <div class="input-group">
+                        <input maxlength="150" id="comment{{ board[i].inx }}" type="text" class="form-control form-control-sm" placeholder="댓글을 입력하세요." aria-describedby="button-comment-send">
+                        <div class="input-group-append">
+                            <button class="btn btn-sm btn-outline-primary comment_btn{{ board[i].inx }}" type="button" id="button-comment-send"><i class="fa fa-send"></i></button>
+                        </div>
+                    </div>
+
+                    <script>
+                        var vote1 = $('.vote_entry1-{{ board[i].inx }}');
+                        var vote_category1 = $('.vote_category1-{{ board[i].inx }}');
+                        var vote_bar1 = $('.good1-{{ board[i].inx }}');
+                        var vote_comment1 = $('.vote_comment1-{{ board[i].inx }}');
+                        var vote2 = $('.vote_entry2-{{ board[i].inx }}');
+                        var vote_category2 = $('.vote_category2-{{ board[i].inx }}');
+                        var vote_bar2 = $('.good2-{{ board[i].inx }}');
+                        var vote_comment2 = $('.vote_comment2-{{ board[i].inx }}');
+                        var a = select();
+                        var b = select();
+                        while (a == b) {
+                            b = select();
+                        }
+                        vote1.addClass('btn-' + a);
+                        vote_category1.addClass('text-' + a);
+                        vote_bar1.addClass('bg-' + a);
+                        vote_comment1.addClass('btn-' + a);
+                        vote2.addClass('btn-' + b);
+                        vote_category2.addClass('text-' + b);
+                        vote_bar2.addClass('bg-' + b);
+                        vote_comment2.addClass('btn-' + b);
+
+                        $('.comment_btn{{ board[i].inx }}').click( function() {
+                            var comment_text = $('#comment{{ board[i].inx }}').val();
+                            if(comment_text.replace(' ', '').length != 0){
+                                $.ajax({
+                                    type : 'POST',
+                                    url : '/write_comment',
+                                    data : {
+                                        'comment': comment_text,
+                                        'index_comment' : "{{ board[i].inx }}"
+                                    },
+                                    dataType : 'JSON',
+                                    success : function(result){
+                                        $('#comment{{ board[i].inx }}').val('');
+                                    },
+                                    error  : function(){
+                                        console.log('Error..')
+                                    }
+                                }).done(function(data){
+                                    var who = '';
+                                    var category = '';
+                                    who = 'New';
+                                    category = 'secondary';
+                                    var content = "<li style='display:inline; height:auto;' class='list-group-item'><span class='badge badge-"+category+"'>"+who+"</span><small class='text-muted float-right'>Now</small><p>"+data['msg']+"</p></li>";
+                                    $('.list-group{{ board[i].inx }}').append(content);
+
+                                    $('.owl-carousel').trigger('refresh.owl.carousel');
+                                });
+                            }
+                        });
+
+                    </script>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <!-- Optional JavaScript -->
+    <script type="text/javascript">
+        function filter(){
+          var value, name, item, i;
+          value = document.getElementById("search").value.toUpperCase();
+          item = document.getElementsByClassName("owl-carousel");
+
+          for(i=0;i<item.length;i++){
+            name = item[i].getElementsByClassName("card-header2");
+            name1 = item[i].getElementsByClassName("card-text2");
+            if(name[0].innerHTML.toUpperCase().indexOf(value) > -1 || name1[0].innerHTML.toUpperCase().indexOf(value) > -1){
+              item[i].style.display = "flex";
+            }else{
+              item[i].style.display = "none";
+            }
+          }
+        }
+    </script>
+
+    <script>
+        $('.owl-carousel').owlCarousel({
+            margin:0,
+            nav:false,
+            touchDrag:true,
+            mouseDrag:true,
+            autowidth:true,
+            autoHeight:true,
+            responsive:{
+                0:{
+                    items:1
+                }
+            }
+        })
+    </script>
+
+    <!-- https://makitweb.com/pull-down-to-refresh-with-pulltorefresh-js/ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pulltorefreshjs/0.1.20/index.umd.min.js" type="text/javascript"></script>
+    <script type='text/javascript'>
+        PullToRefresh.init({
+            mainElement: '.refresh-pos',
+            triggerElement: '#pulldown',
+            instructionsPullToRefresh: '당겨서',
+            instructionsReleaseToRefresh: '놓으면',
+            instructionsRefreshing: '슝~',
+            onRefresh: function(){ window.location.reload(); }
+        });
+    </script>
+
+    <!-- Optional JavaScript -->
+    <script>
+        feather.replace()
+    </script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>

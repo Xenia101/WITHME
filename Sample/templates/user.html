@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158084303-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    
+    gtag('config', 'UA-158084303-1');
+    </script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- feathericons -->
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="./static/img/favicon.ico">
+    <!-- owlCarousel2 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+    <!-- jQuery -->
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    
+    <title>WITHME | USER</title>
+
+    <style>
+        html, body{
+            background-color: #f5f5f5;
+        }
+        .table{
+          margin-top:15px;
+          margin-bottom:15px;
+        }
+        .upText {
+            border-color: #15B7B9;
+            background-color: #15B7B9;
+            color:white;
+        }
+        .upText:hover{
+            color:white;
+            background-color: #15B7B9;
+            border-color: #15B7B9;
+        }
+        .upText:active{
+            background-color: #15B7B9!important;
+            border-color: #15B7B9!important;
+        }
+        .form-control:focus {
+	        border-color : #15B7B9;
+          box-shadow : inset 0 1px 1px rbga(0, 0, 0, 0.075), 0 0 8px rbga(21, 183, 185, 0.6);
+        }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-light" style="background-color: #15B7B9!important; margin-bottom: 1px;">
+      <a class="navbar-brand" style="color:white;">WITHME Beta</a>
+      <a class="form-inline" href="{{ url_for('home') }}" style="color:white; cursor:pointer;"><i class="mr-sm-2" data-feather="arrow-left"></i></a>
+    </nav>
+    <div class="container">
+
+      <table class="table table-hover">
+        <thead>
+          <tr style="text-align: center;">
+            <th colspan="2">회원정보</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for key, value in items.items() %}
+          <tr>
+            <th scope="row">{{ key }}</th>
+            <td>{{ value }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+      <form action="{{ url_for('qna') }}" method="POST">
+        <div class="modal fade" id="qnaModal" tabindex="-1" role="dialog" aria-labelledby="freeModal" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-body">
+                    <textarea style="resize: none;" maxlength="200" class="form-control" id="validationTextarea" placeholder="관리자에게 궁금한 점이나 개선하였으면 좋은 부분을 보내주세요!" rows="6" name="content" required></textarea>
+                </div>
+                <div class="modal-footer text-center">
+                  <button type="submit" class="upText btn btn-sm btn-light btn-block"><i data-feather="send"></i></button>
+                </div>
+              </div>
+            </div>
+        </div>
+      </form>
+
+      <div class="row form-group">
+        <div class="col-6">
+          <a href="http://www.withme.xyz/info" class="btn btn-sm upText btn-lg btn-block" style="color:white;">도움말</a>
+        </div>
+        <div class="col-6">
+          <button class="btn btn-sm upText btn-lg btn-block" type="button" data-toggle="modal" data-target="#qnaModal">문의하기</button>
+        </div>
+      </div>
+
+      <div class="row form-group">
+        <div class="col-6">
+          <a href="{{ url_for('reverify2') }}" class="btn btn-sm upText btn-lg btn-block" style="color:white;">비밀번호 변경</a>
+        </div>
+        <div class="col-6">
+          <a href="{{ url_for('reverify1') }}" class="btn btn-sm upText btn-lg btn-block" style="color:white;">회원탈퇴</a>
+        </div>
+      </div>
+
+      <form action="{{ url_for('logout') }}" method="POST">
+        <button type="submit" class="btn btn-danger btn-block">로그아웃</button>
+      </form>
+
+      <div class="owl-carousel owl-theme">
+        <div class="item">
+          <div class="card mt-3">
+            <div class="card-body">
+              <small ><b class="text-danger">Tip <i class="fas fa-exclamation"></i></b><br> 
+                모바일 <u>홈 화면</u>에 추가하여 더욱 쉽게 접속해보세요!</small><br><br>
+            <small><i class="fab fa-android text-success"></i> : 설정 → 현재페이지추가 → 홈 화면 → 이름 설정 → 추가</small><br>
+            <small><i class="fab fa-apple"></i> : Safari 브라우저로 접속 → 하단에 공유 버튼 클릭 → 홈 화면에 추가</small>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="card mt-3">
+            <div class="card-body">
+              <small><b class="text-danger">Tip <i class="fas fa-exclamation"></i></b><br>
+              새로 올라온 게시글을 보려면 게시글을 <u>아래로 당겨</u>보세요! </small>
+              <small><i class="fas fa-retweet text-info"></i> 새로고침 할 수 있어요!</small><br>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="card mt-3">
+            <div class="card-body">
+              <small><b class="text-danger">Tip <i class="fas fa-exclamation"></i></b><br>
+              해당 게시글의 댓글을 보시려면 <i class="fas fa-angle-double-left text-info"></i> <u>오른쪽에서 왼쪽으로 </u>게시글을 밀어주세요! </small>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Optional JavaScript -->
+    <script>
+      feather.replace()
+    </script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+      $('.owl-carousel').owlCarousel({
+        
+          margin:0,
+          nav:false,
+          touchDrag:true,
+          mouseDrag:true,
+          animateIn: 'fadeIn',
+          animateOut: 'fadeOut',
+          autoplay:true,
+          timeout:500,
+          loop:true,
+          autoplayHoverPause:true,
+          responsive:{
+              0:{
+                  items:1
+              }
+          }
+      })
+    </script>
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
